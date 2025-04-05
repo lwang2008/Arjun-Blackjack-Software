@@ -52,8 +52,7 @@ class Game:
     def end_round(self):
         if not self.round_in_progress:
             raise Exception("Round not started")
-        dealer_hand = self.dealer.reveal_hand() 
-        print(f"Dealer {dealer_hand}")
+        print(f"Dealer {self.dealer.reveal_hand()}")
         dealer_total = self.dealer.total_hand()
         for player in self.active_players:  #only process active players
             for hand in player.show_hands():
