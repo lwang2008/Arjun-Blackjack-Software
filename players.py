@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from .deck import Deck, Card, Rank, Hand
 from .strategy import Action, blackjack_strategy
+=======
+from deck import Deck, Card, Rank, Hand
+from strategy import Action, blackjack_strategy
+>>>>>>> 325f1b0 (fixed game logic)
 
 class Dealer:
     deck: Deck

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from .deck import Deck, Rank, Hand
 from .players import Dealer, Player
+=======
+from deck import Deck, Rank, Hand
+from players import Dealer, Player
+>>>>>>> 325f1b0 (fixed game logic)
     
 class Game:
     round_in_progress: bool = False
@@ -23,10 +28,15 @@ class Game:
             hand.draw(self.dealer.deal())
             player.place_bet(hand, 10)
 
+<<<<<<< HEAD
             if hand.total() == 21:
                 print(f"Player {player} has blackjack!")
                 player.balance += hand.bet * 2.5
                 player.clear()
+=======
+            #player blackjack does not mean round is over, dealer may also have blackjack
+            #move handling of blackjack 
+>>>>>>> 325f1b0 (fixed game logic)
 
         self.show_table()
 
@@ -48,7 +58,18 @@ class Game:
                 hand_total = hand.total()
                 if hand_total > 21:
                     print(f"Player {player} {hand} busts!")
+<<<<<<< HEAD
                 elif hand_total > 21 or hand_total > dealer_total:
+=======
+                elif hand_total == 21 and len(hand) == 2:  #true blackjack means only 2 cards add to 21
+                    if dealer_total == 21 and len(self.dealer.reveal_hand()) == 2:
+                        print(f"Player {player} pushes!")
+                        player.balance += hand.bet
+                    else:
+                        print(f"Player {player} has blackjack!")
+                        player.balance += hand.bet * 2.5 
+                elif dealer_total > 21 or hand_total > dealer_total: #if dealer busts and player does not, or player has higher count -> player wins
+>>>>>>> 325f1b0 (fixed game logic)
                     print(f"Player {player} wins!")
                     player.balance += hand.bet * 2
                 elif hand_total == dealer_total:

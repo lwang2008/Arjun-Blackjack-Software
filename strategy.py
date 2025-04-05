@@ -1,5 +1,9 @@
 from enum import Enum
+<<<<<<< HEAD
 from .deck import Rank
+=======
+from deck import Rank
+>>>>>>> 325f1b0 (fixed game logic)
 
 class Action(Enum):
     H = "Hit"
