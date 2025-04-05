@@ -14,10 +14,10 @@ class Dealer:
     def start_round(self, count: cardCounter):
         card = self.deck.cards.pop()
         self.hand.append(card)
-        count.update_count(card)
+        count.update_count(card) #update count
         card = self.deck.cards.pop()
         self.hand.append(card)
-        count.update_count(card)
+        count.update_count(card) #update count
 
     #dealer always shows first card
     def show_hand(self) -> Card:
@@ -78,7 +78,7 @@ class Player:
         elif action == Action.H:
             card = dealer.deal()
             hand.draw(card)
-            count.update_count(card)
+            count.update_count(card) #update count
         elif action == Action.D or action == Action.Ds:
             self.balance -= hand.bet
             hand.bet *= 2
@@ -90,10 +90,10 @@ class Player:
             new_hand = hand.split()
             card = dealer.deal()
             new_hand.draw(card)
-            count.update_count(card)
+            count.update_count(card) #update count
             card = dealer.deal()
             hand.draw(card)
-            count.update_count(card)
+            count.update_count(card) #update count
             self.place_bet(new_hand, hand.bet)
             self.play(dealer, count, self.hands[-1])
         elif action == Action.YN:
