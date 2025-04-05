@@ -10,7 +10,7 @@ class Game:
     count: cardCounter
     minimum_bet: int #add minimum bet
     active_players: list[Player] #active players in game
-    bj_payout_ratio: float
+    bj_payout_ratio: float #payout ratio is configurable
     
 
     def __init__(self, num_players: int, num_decks: int, minimum_bet: int = 10, bj_payout_ratio: float = 1.5):
