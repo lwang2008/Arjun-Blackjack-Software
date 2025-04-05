@@ -1,5 +1,9 @@
 from enum import Enum
+<<<<<<< HEAD
 from deck import Rank
+=======
+from .deck import Rank
+>>>>>>> upstream/main
 
 class Action(Enum):
     H = "Hit"
