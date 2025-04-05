@@ -28,7 +28,7 @@ class Game:
         self.dealer.start_round(self.count)
         for player in self.players:
             if player.balance < self.minimum_bet:
-                print(f"Player {player.id} does not have enough money to play")
+                print(f"Player {player.id} does not have enough money to play") #player must have money to be "active"
                 continue
             hand = Hand()
             hand.draw(self.dealer.deal())
